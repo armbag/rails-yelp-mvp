@@ -1,0 +1,15 @@
+<h1>Add a comment on <%= @restaurant.name %></h1>
+
+<br>
+<br>
+<br>
+
+<%= simple_form_for [@restaurant, @review] do |f| %>
+  <div class="container">
+    <p><%= f.input :content, label: "your comment" %></p>
+    <br>
+    <p>Leave your rating</p>
+    <p><%= f.select :rating, ['0', '1', '2', '3', '4', '5'] %></p>
+    <%= f.submit "Add Review", class: "btn btn-primary" %>
+  </div>
+<% end %>
